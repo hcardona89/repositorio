@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        <title>ParkingCeet</title>
+        <style>
+            .col-xs-updated {
+                width: 92% !important;
+            }
+            .ui-selectonemenu-label{
+                width:100% !important;
+            }
+            .ui-selectonemenu{
+                width:100% !important;
+                padding: 0px !important;
+            }  
+            .ui-selectonemenu .ui-selectonemenu-trigger {
+                width: 25px;
+                height: 100%;
+            }
+            .inputNumber input
+            {
+                width: 100% !important;
+            }
+            .text100{
+                width:100% !important;
+            }
+            .navbar-inverse .navbar-brand {
+                color: #fff;
+            }
+            .navbar-inverse .navbar-brand:hover,
+            .navbar-inverse .navbar-brand:focus {
+                color: #fff;
+                background-color: transparent;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #000000;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:focus,
+            .btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:hover {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:active:hover,
+            .btn-primary.active:hover,
+            .open > .dropdown-toggle.btn-primary:hover,
+            .btn-primary:active:focus,
+            .btn-primary.active:focus,
+            .open > .dropdown-toggle.btn-primary:focus,
+            .btn-primary:active.focus,
+            .btn-primary.active.focus,
+            .open > .dropdown-toggle.btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .captcha {
+                width: 304px;
+                margin: 0 auto;
+            }
+        </style>
+    </h:head> 
+    <body> 
+        <div class="navbar navbar-inverse " >
+            <div class="navbar-brand">Registro de Cupos</div>
+        </div>
+        <div class="container" style="width: 100%">
+            <div class="row">
+                <div class="col-xs-12 col-xs-updated">
+                    <h:form id="frmCupo" styleClass="form-horizontal" enctype="multipart/form-data">
+                        <h4><b>Datos Generales</b></h4>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Nro Cupo" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{cupoBean.cupo.numeroCupo}" pt:required="true" pt:placeholder="Nro Cupo" styleClass="text100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Tipo de Cupo" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="#{cupoBean.tipoCupo.idTipoCupo}">
+                                        <f:selectItem itemLabel="Seleccione"/>
+                                        <f:selectItems value="#{tipoCupoBean.listaTipoCupo}" var="T" itemLabel="#{T.tipoCupo}" itemValue="#{T.idTipoCupo}"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>   
+                            </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Piso" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="#{cupoBean.pisoCupo.idPisoCupo}">
+                                    <f:selectItem itemLabel="Seleccione"/>
+                                    <f:selectItems value="#{pisoCupoBean.listaPisoCupo}" var="P" itemLabel="#{P.pisoCupo}" itemValue="#{P.idPisoCupo}"/>
+                                        
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                            
+                        
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Medidas" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="#{cupoBean.medidasCupo.idMedidasCupo}">
+                                        <f:selectItem itemLabel="Seleccione"/>
+                                        <f:selectItems value="#{medidasCupoBean.listaMedidasCupo}" var="M" itemLabel="#{M.medidasCupo}" itemValue="#{M.idMedidasCupo}"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                           </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Estado" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="#{cupoBean.cupo.estado}">
+                                        <f:selectItem itemLabel="Activo" itemValue="Activo"/>
+                                        <f:selectItem itemLabel="Inactivo" itemValue="Inactivo"/>
+                                        
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                            
+                        </div>
+                            
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <div class=" col-sm-5">
+                                    <h:commandButton action="#{cupoBean.validaSaveOrUpdate()}"  value="Guardar" styleClass="btn btn-lg btn-primary btn-block"
+ />
+                                </div>
+                                <div class=" col-sm-5">
+                                    <h:commandButton value="Cancelar" styleClass="btn btn-lg btn-primary btn-block"
+/>
+                                </div>
+                         </div>
+                        </div>
+                    </h:form>
+                    
+                    
+                    <h:form id="TablaDatos">
+                        
+                        <p:dataTable id="tablaRegistros" var="C" value="#{cupoBean.listaCupo}"  reflow="true" rowHover="true" >
+                            <p:column headerText="Nro Cupo">
+                                <h:outputText value="#{C.numeroCupo}"/>
+                            </p:column>
+
+                            <p:column headerText="Piso">
+                                <h:outputText value="#{C.idPisoCupo.pisoCupo}"/>
+                            </p:column>
+
+                            <p:column headerText="Medidas">
+                                <h:outputText value="#{C.idMedidasCupo.medidasCupo}"/>
+                            </p:column>
+                            <p:column headerText="Estado">
+                                <h:outputText value="#{C.estado}"/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <p:commandButton value="Editar" styleClass="btn btn-lg btn-primary btn-block"
+                                                 update=":frmCupo">
+                                    <f:setPropertyActionListener target="#{cupoBean.cupo}" value="#{C}"/>
+                                  
+                                </p:commandButton>
+                                                 
+                                <h:outputText value=""/>
+                            </p:column>
+                            <p:column headerText="Eliminar">
+                                <p:commandButton value="Eliminar" styleClass="btn btn-lg btn-primary btn-block"/>
+                                <h:outputText value=""/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+
+
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
+
+

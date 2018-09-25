@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        <title>ParkingCeet</title>
+        <style>
+            .col-xs-updated {
+                width: 92% !important;
+            }
+            .ui-selectonemenu-label{
+                width:100% !important;
+            }
+            .ui-selectonemenu{
+                width:100% !important;
+                padding: 0px !important;
+            }  
+            .ui-selectonemenu .ui-selectonemenu-trigger {
+                width: 25px;
+                height: 100%;
+            }
+            .inputNumber input
+            {
+                width: 100% !important;
+            }
+            .text100{
+                width:100% !important;
+            }
+            .navbar-inverse .navbar-brand {
+                color: #fff;
+            }
+            .navbar-inverse .navbar-brand:hover,
+            .navbar-inverse .navbar-brand:focus {
+                color: #fff;
+                background-color: transparent;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #000000;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:focus,
+            .btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:hover {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:active:hover,
+            .btn-primary.active:hover,
+            .open > .dropdown-toggle.btn-primary:hover,
+            .btn-primary:active:focus,
+            .btn-primary.active:focus,
+            .open > .dropdown-toggle.btn-primary:focus,
+            .btn-primary:active.focus,
+            .btn-primary.active.focus,
+            .open > .dropdown-toggle.btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .captcha {
+                width: 304px;
+                margin: 0 auto;
+            }
+        </style>
+    </h:head> 
+    <body> 
+        <div class="navbar navbar-inverse " >
+            <div class="navbar-brand">Registro de Vehiculos</div>
+        </div>
+        <div class="container" style="width: 100%">
+            <div class="row">
+                <div class="col-xs-12 col-xs-updated">
+                    <h:form styleClass="form-horizontal" enctype="multipart/form-data">
+                        <h4><b>Datos Generales</b></h4>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Placa" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="" pt:required="true" pt:placeholder="Placa" styleClass="text100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Tipo de Vehiculo" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="">
+                                        <f:selectItem itemLabel="Automovil" itemValue="1"/>
+                                        <f:selectItem itemLabel="Motocicleta" itemValue="2"/>
+                                        <f:selectItem itemLabel="Bus" itemValue="3"/>
+                                        <f:selectItem itemLabel="Camioneta" itemValue="4"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>   
+                            </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Marca" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="">
+                                        <f:selectItem itemLabel="Mazda" itemValue="1"/>
+                                        <f:selectItem itemLabel="Chevrolet" itemValue="2"/>
+                                        <f:selectItem itemLabel="Toyota" itemValue="3"/>
+                                        <f:selectItem itemLabel="Renault" itemValue="4"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                            
+                        
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Modelo" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="">
+                                        <f:selectItem itemLabel="2015" itemValue="1"/>
+                                        <f:selectItem itemLabel="2016" itemValue="2"/>
+                                        <f:selectItem itemLabel="2017" itemValue="3"/>
+                                        <f:selectItem itemLabel="2018" itemValue="4"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                           </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Color" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="">
+                                        <f:selectItem itemLabel="Plateado" itemValue="1"/>
+                                        <f:selectItem itemLabel="Azul" itemValue="2"/>
+                                        <f:selectItem itemLabel="Verde" itemValue="3"/>
+                                        <f:selectItem itemLabel="Negro" itemValue="4"/>
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                            
+                        
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Dni" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="" pt:required="true" pt:placeholder="Dni" styleClass="text100"/>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <div class=" col-sm-4">
+                                    <h:commandButton value="Registrar" />
+                                </div>
+                                <div class=" col-sm-4">
+                                    <h:commandButton value="Cancelar" />
+                                </div>
+                         </div>
+                        </div>
+                    </h:form>
+                    
+
+                    <h:form id="TablaDatos">
+                        <p:dataTable id="tablaRegistros" var="V" value="#{vehiculoBean.listaVehiculo}"  reflow="true" rowHover="true" >
+                            <p:column headerText="Placa">
+                                <h:outputText value="#{V.placa}"/>
+                            </p:column>
+
+                            <p:column headerText="Marca">
+                                <h:outputText value=""/>
+                            </p:column>
+
+                            <p:column headerText="Modelo">
+                                <h:outputText value=""/>
+                            </p:column>
+                            <p:column headerText="Dni">
+                                <h:outputText value=""/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <h:outputText value=""/>
+                            </p:column>
+                            <p:column headerText="Eliminar">
+                                <h:outputText value=""/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+
+
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
+
